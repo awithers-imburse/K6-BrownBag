@@ -1,9 +1,9 @@
 
 // CSV:
-// docker run -v ${pwd}:/mnt loadimpact/k6 run --out csv=/mnt/test_result.csv "/mnt/A - Getting started/04 - with scenario.js"
+// docker run -v ${pwd}:/mnt loadimpact/k6 run --out csv=/mnt/test_result.csv "/mnt/A - Getting started/03 - with scenarios.js"
 
 // JSON:
-// docker run -v ${pwd}:/mnt loadimpact/k6 run --out json=/mnt/test_result.json "/mnt/A - Getting started/04 - with scenario.js"
+// docker run -v ${pwd}:/mnt loadimpact/k6 run --out json=/mnt/test_result.json "/mnt/A - Getting started/03 - with scenarios.js"
 
 
 

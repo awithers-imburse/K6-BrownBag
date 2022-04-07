@@ -1,20 +1,18 @@
 import http from 'k6/http';
 
-// docker run -v ${pwd}:/mnt loadimpact/k6 run "/mnt/A - Getting started/04 - with scenario.js"
-
 
 export const options = {
   
   scenarios: {
 
-    brownBagDemo: {
+    exampleScenarioWithFixedUsage: {
       executor: 'per-vu-iterations',
       iterations: 10,
       vus: 5,
       maxDuration: '10s',
     },
 
-    brownBagDemoFinale: {
+    exampleScenarioWithRampedUsage: {
       executor: 'ramping-vus',
       startVUs: 5,
       stages: [
@@ -25,6 +23,15 @@ export const options = {
     }
   }
 };
+
+
+export default function() {
+    http.get('https://www.google.co.uk');
+}
+
+
+// docker run -v ${pwd}:/mnt loadimpact/k6 run "/mnt/A - Getting started/03 - with scenarios.js"
+
 
 /******************************************************************************* 
  * shared-iterations     - iteration count fixed, VUs may not be utilised evenly
@@ -39,7 +46,4 @@ export const options = {
  *******************************************************************************/
 
 
-export default function() {
-    http.get('https://www.google.co.uk');
-}
 
